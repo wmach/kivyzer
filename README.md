@@ -41,6 +41,17 @@ C:\Users\${you}\docker-kivyzer\hostcwd> docker-compose run kivyzer init
 File buildozer.spec created, ready to customize!
 ```
 
+## spec ファイルにライブラリ記述を追加する
+
+ - pygmentsを追加　※ buildozer のバグ？
+
+```
+# (list) Application requirements
+# comma separated e.g. requirements = sqlite3,kivy
+requirements = python3,kivy,pygments
+```
+
+
 ## Buildozer でデバッグ用の APK を作成する
 
  - 入力
@@ -62,7 +73,6 @@ C:\Users\${you}\docker-kivyzer\hostcwd> docker-compose run kivyzer android debug
 # Create directory /home/kivyzer/hostcwd/.buildozer/android/platform
 # Create directory /home/kivyzer/hostcwd/.buildozer/android/app
 ... （略）
-
 ```
 
 ## Buildozer の質問に 'Y' と返答する
@@ -82,7 +92,6 @@ Accept? (y/N): y
 # Run ['/home/kivyzer/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager', '--sdk_root=/home/kivyzer/.buildozer/android/platform/android-sdk', '--list']
 # Cwd /home/kivyzer/.buildozer/android/platform/android-sdk
 ...（略）
-
 ```
 
 ## エラー発生時
@@ -94,7 +103,6 @@ Accept? (y/N): y
 # Command failed: ['/usr/bin/python3', '-m', 'pythonforandroid.toolchain', 'create', '--dist_name=myapp', '--bootstrap=sdl2', '--requirements=python3,kivy', '--arch=arm64-v8a', '--arch=armeabi-v7a', '--copy-libs', '--color=always', '--storage-dir=/home/kivyzer/hostcwd/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a', '--ndk-api=21', '--ignore-setup-py', '--debug']
 # ENVIRONMENT:
 ...（略）
-
 ```
 
  - hostcwd\.buildozer\ ディレクトリを削除
@@ -108,16 +116,4 @@ C:\Users\${you}\docker-kivyzer\hostcwd> rmdir /s .buildozer
 ```
 C:\Users\${you}\docker-kivyzer\hostcwd> docker-compose run kivyzer android debug
 ```
-
-
-
-
-
-
-
-
-
-
-
-
 
