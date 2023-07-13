@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  kivyzer:
+    build: .
+    container_name: kivyzer
+    privileged: true
+    # restart: always
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\makot\repos\docker-kivyzer\hostcwd
+        target: /home/kivyzer/hostcwd

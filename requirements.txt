@@ -1,0 +1,4 @@
+buildozer
+kivy
+kivymd
+pygments
